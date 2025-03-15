@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🤯 Sigma Skibidi Search 🤯</title>
+    <style>
+      body {
+        background: linear-gradient(45deg, red, blue, green, yellow);
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        text-align: center;
+        color: lime;
+        animation: spinBg 5s infinite alternate-reverse;
+      }
+      @keyframes spinBg {
+        0% {
+          filter: hue-rotate(0deg);
+        }
+        100% {
+          filter: hue-rotate(360deg);
+        }
+      }
+      h2 {
+        font-size: 3em;
+        text-shadow: 3px 3px 10px black;
+      }
+      input {
+        padding: 15px;
+        border: 5px dashed magenta;
+        font-size: 1.5em;
+        text-align: center;
+        background-color: cyan;
+        color: black;
+      }
+      button {
+        padding: 20px;
+        font-size: 2em;
+        background: repeating-linear-gradient(
+          45deg,
+          yellow,
+          pink 10px,
+          cyan 20px
+        );
+        border: 4px solid black;
+        cursor: pointer;
+        animation: shake 0.2s infinite;
+      }
+      @keyframes shake {
+        0% {
+          transform: rotate(2deg);
+        }
+        50% {
+          transform: rotate(-2deg);
+        }
+        100% {
+          transform: rotate(2deg);
+        }
+      }
+      button:hover {
+        background-color: purple;
+        color: white;
+        font-size: 2.2em;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>💀 Skibidi Reverse Search 💀</h2>
+    <input type="text" id="searchBox" placeholder="Type your fate..." />
+    <br /><br />
+    <button onclick="reverseSearch()">🔥 CHAOS SEARCH 🔥</button>
+
+    <script>
+      let searches = 0;
+      let searchTerms = [
+        "why do bananas dream?",
+        "secret cow society",
+        "can a fish be president?",
+        "how to marry a ghost",
+        "skibidi toilet sigma edition",
+        "who stole my sandwich?",
+        "what happens if you eat a cloud?",
+        "does Kanye West control the matrix?",
+        "dancing spaghetti conspiracy",
+        "invisible elephants spotted",
+        "best way to insult a pineapple",
+        "how to teach a dog algebra",
+        "is water wet or just misunderstood?",
+        "do trees have feelings?",
+        "history of the dancing banana meme",
+        "why does my shadow look suspicious?",
+        "alien cats taking over?",
+        "how to talk to a toaster",
+        "secret government potato experiments",
+        "does the moon have WiFi?",
+        "can I time travel by sneezing?",
+        "do ghosts have jobs?",
+        "why is my goldfish staring at me?",
+        "how to summon a sandwich",
+        "world’s smallest skyscraper facts",
+        "how to become a professional sleeper",
+        "why does my cat look disappointed in me?",
+        "can jellybeans predict the future?",
+        "is my reflection judging me?",
+        "do pigeons have secret meetings?",
+        "what’s inside a black hole?",
+        "does the Loch Ness Monster have a Twitter?",
+        "how to make a car out of cheese?",
+        "why do clouds look so fluffy but aren’t?",
+        "can a fish do karate?",
+        "is the Earth actually a donut?",
+        "if a tree falls and no one hears it, does it gossip about us?",
+        "can I marry my fridge?",
+        //made by mahmoud mostafa DONT STEAL CODE
+        "how do I get rid of a ghost roommate?",
+        "best way to fake being an alien",
+        "do vampires drink soup?",
+        "what if the sun was made of marshmallows?",
+        "how to identify a suspicious looking apple?",
+        "why do ducks waddle?",
+        "can I train my cat to do my homework?",
+        "how to make a wormhole in my backyard?",
+        "does my toaster know too much?",
+        "should I trust my goldfish with my secrets?",
+        "why do giraffes look so wise?",
+        "can I teach my shadow to dance?",
+      ];
+      let usedTerms = [];
+
+      function getUniqueSearchTerm() {
+        if (usedTerms.length === searchTerms.length) {
+          usedTerms = []; // Reset if all terms have been used
+        }
+
+        let availableTerms = searchTerms.filter(
+          (term) => !usedTerms.includes(term)
+        );
+        let randomTerm =
+          availableTerms[Math.floor(Math.random() * availableTerms.length)];
+        usedTerms.push(randomTerm);
+        return randomTerm;
+      }
+
+      function reverseSearch() {
+        let userQuery = document.getElementById("searchBox").value.trim();
+
+        if (userQuery === "") {
+          alert("🛑 Enter a weird search term, mortal! 🛑");
+          return;
+        }
+
+        searches++;
+
+        if (searches === 25) {
+          alert("☠☠ WASTED YOUR TIME ☠☠");
+        }
+
+        let randomTerm = getUniqueSearchTerm();
+        document.body.innerHTML +=
+          '<h1 style="color:red; font-size:5em;">💀 Initiating Chaos Mode 💀</h1>';
+
+        setTimeout(() => {
+          window.location.href =
+            "https://www.google.com/search?q=" + encodeURIComponent(randomTerm);
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>
