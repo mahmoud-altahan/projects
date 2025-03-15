@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        background-color: #ffffff;
+        font-family: Arial, sans-serif;
+      }
+
+      .search-container {
+        text-align: center;
+      }
+
+      #searchBox {
+        width: 500px;
+        padding: 15px;
+        font-size: 18px;
+        border: 1px solid #dfe1e5;
+        border-radius: 30px;
+        outline: none;
+        transition: all 0.3s ease-in-out;
+      }
+
+      #searchBox:focus {
+        border-color: #4285f4;
+        box-shadow: 0px 0px 5px rgba(66, 133, 244, 0.5);
+      }
+
+      .search-button {
+        margin-top: 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4285f4;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out;
+      }
+
+      button:hover {
+        background-color: #357ae8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="search-container">
+      <h1 style="color: #4285f4; font-size: 50px; font-weight: bold">GOOGLE</h1>
+      <input type="text" id="searchBox" placeholder="search here....ig" />
+      <div class="search-button">
+        <button onclick="reverseSearch()">Search</button>
+      </div>
+    </div>
+
+    <script>
+      function reverseSearch() {
+        let userQuery = document.getElementById("searchBox").value;
+        //made by mahmoud mostafa DONT STEAL CODE
+        if (userQuery.trim() === "") {
+          alert("Please enter something!");
+          return;
+        }
+        window.location.href =
+          "results.html?query=" + encodeURIComponent(userQuery);
+      }
+    </script>
+  </body>
+</html>

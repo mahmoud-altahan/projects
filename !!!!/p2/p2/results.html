@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Results</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+      #container {
+        display: none;
+      }
+      #message {
+        font-size: 24px;
+        font-weight: bold;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        display: none;
+      }
+      /* Loading animation */
+      .loader {
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid #3498db;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loader" class="loader"></div>
+
+    <div id="container">
+      <div id="message"></div>
+      <button id="googleButton" onclick="goToNoGoogle()">
+        Fine, I'll use Google
+      </button>
+    </div>
+
+    <script>
+      let messages = [
+        "IDK tbh just use Google Bro 🙏",
+        "I am new sorry I don't know",
+        "Bro just ask ChatGPT 💀",
+        "Uhhh... try asking someone smarter?",
+        "Even Google would struggle with this",
+        "NOT U AGAIN",
+        "KYS nga",
+      ];
+
+      function showMessage() {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("container").style.display = "block";
+        document.getElementById("googleButton").style.display = "inline-block";
+
+        let randomMessage =
+          messages[Math.floor(Math.random() * messages.length)];
+        document.getElementById("message").textContent = randomMessage;
+      }
+
+      setTimeout(showMessage, 3000);
+
+      function goToNoGoogle() {
+        window.location.href = "no-google.html";
+      }
+      //made by mahmoud mostafa DONT STEAL CODE
+    </script>
+  </body>
+</html>
